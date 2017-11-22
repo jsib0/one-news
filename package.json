@@ -1,0 +1,26 @@
+{
+  "name": "one_news",
+  "version": "1.0.0",
+  "description": "All in once news source",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jon P. Sibala",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "jquery": "^3.2.1",
+    "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.1.1",
+    "react-favicon": "0.0.11",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
