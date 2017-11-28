@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import NewsReducer from './news-reducer';
+import SingleNews from './single-news-reducer';
 
 
 const rootReducer = combineReducers({
-	news: NewsReducer
+	news: NewsReducer,
+	channel: SingleNews
 });
 
 

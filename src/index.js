@@ -8,6 +8,7 @@ import NavbarComponent from './containers/navbar';
 import SideNavigation from './containers/SideNav/side-nav';
 import CallNews from './containers/call-news';
 import Favicon from 'react-favicon';
+import NewsCurrent from './containers/news-current';
 
 
 
@@ -22,6 +23,7 @@ class App extends Component {
  		 	<NavbarComponent />
  			<SideNavigation />
  			<CallNews />
+ 			<NewsCurrent />
  		 </div>
  	  )
    };

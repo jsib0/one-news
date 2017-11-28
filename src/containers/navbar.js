@@ -5,7 +5,7 @@ import { Navbar, PageHeader, Nav, NavItem, Col } from 'React-Bootstrap';
 
 class NavbarComponent extends Component {
 	
-
+	
 	render () {
 		return (
 			  <Navbar>
@@ -30,7 +30,6 @@ class NavbarComponent extends Component {
 	    )
 	}
 }
-
 
 
 export default NavbarComponent;

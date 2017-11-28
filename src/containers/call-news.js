@@ -11,10 +11,10 @@ class CallNews extends Component {
 
 		this.state = { term: '' };
 
-		this.onClickButton = this.onClickButton.bind(this);
+		
 	}
 
-	onClickButton() {
+	componentDidMount() {
 		this.props.fetchNews();
 	}
 
@@ -22,7 +22,7 @@ class CallNews extends Component {
 	render () {
 	  return  (
 	  	<div>
-	  		{this.onClickButton()}
+	  		{this.componentDidMount()}
 		</div>
 	  );
    }

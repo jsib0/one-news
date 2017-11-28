@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SideNav, {MenuIcon} from 'react-simple-sidenav';
-import { fetchNews } from '../../actions/index';
-import { bindActionCreators } from 'redux';
+import { fetchNews, fetchCompany } from '../../actions/index';
 
 
 class SideNavigation extends Component {
@@ -10,26 +9,39 @@ class SideNavigation extends Component {
 		super(props);
 
 		this.state = { showNav: false };
-      
+
+		this.fetchNewsCompany = this.fetchNewsCompany.bind(this);
+  
+  		this.listNews = this.listNews.bind(this);
 	}
+
+	fetchNewsCompany(event) {
+	
+		alert(event)
+		this.props.fetchCompany(event);
+		
+
+	}
+
+	
 	
 	listNews(listNews) {
-		const list = listNews.sources.map( (list) => {
-			let buffer = [];
-			buffer.push(list.name)
-			return <li>{buffer}</li>
-		})
+
+		let listStyle = {
+			display: 'block'
+		}
 		
-		return (
-			<li>
-				{list}
-			</li>
-		)
+		return listNews.sources.map((news) => <a  style={listStyle}  onClick={ () => {this.fetchNewsCompany(news.id)}} href="/" >{news.name}</a>)
 	}
 
 	
 	render () {
+
+	
+
 		
+
+		 
 		return (
 			<div>
 			  <div className="button"  onClick={() => this.setState({showNav: true})}>
@@ -38,13 +50,11 @@ class SideNavigation extends Component {
 			  <SideNav
          	  	showNav = {this.state.showNav}
         	  	onHideNav = {() => this.setState({showNav: false})} 
-				items={[
-					<ul>
-						<a>{this.props.news.map(this.listNews)}</a>
-			   		</ul>
-			      ]}
+				items={[this.props.news.map(this.listNews)]}
+				title="ONE NEWS"
+			   
         	   />
-        	  <div><ul>{this.props.news.map(this.listNews)}</ul></div>
+        	  <div></div>
     		</div>
 		)
 	}
@@ -59,7 +69,7 @@ function mapStateToProps(state) {
 	return { news: state.news };
 }
 
-export default connect(mapStateToProps)(SideNavigation);
+export default connect(mapStateToProps, { fetchCompany }) (SideNavigation);
 
 
 
