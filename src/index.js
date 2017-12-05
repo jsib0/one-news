@@ -4,12 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import reducers from './reducers';
-import NavbarComponent from './containers/navbar';
-import SideNavigation from './containers/SideNav/side-nav';
+import SideNavigation from './containers/side-nav';
 import CallNews from './containers/call-news';
 import Favicon from 'react-favicon';
 import NewsCurrent from './containers/news-current';
-
+import InitPage from './containers/init-page';
 
 
 
@@ -20,10 +19,10 @@ class App extends Component {
  		return ( 		
  		 <div>
  		 	<Favicon url="http://localhost:8080/favicon.png?v=2" />
- 		 	<NavbarComponent />
  			<SideNavigation />
  			<CallNews />
  			<NewsCurrent />
+ 			<InitPage />
  		 </div>
  	  )
    };
