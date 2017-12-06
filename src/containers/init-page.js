@@ -18,23 +18,25 @@ class InitPage extends Component {
 	homePage(event){
 		
 		let main = event.articles[0];
-		let newslist = event.articles.filter( (first) => first !== main).map( (dick) => 
-				<Col>
-					<div><h1>{dick.title}</h1></div>
-					<div>{dick.description}</div>
-				</Col>
+		let newslist = event.articles.map( (head) => 
+				
+					<div key={head.url} className="newslist-title" >
+						<a href={head.url} target="_blank"><img src={head.urlToImage} alt=""/>
+						<h4>{head.title}</h4>
+						<p>{head.description}</p>
+						</a>
+					</div>
 				)
 			
 
 		return (
-			<div className="main-block">
+			<div key={main.source.name} className="main-block">
+				<div className="news-name">Source: {main.source.name}</div>
 				<div className="main-story">
-					<a href={main.url}><img src={main.urlToImage} alt=""/></a>
-					<a href={main.url}><h1>{main.title}</h1></a>
-					<p>{main.description}</p>
+					{newslist}
 				</div>
 				<div className="news-list">
-					{newslist}
+					
 				</div>
 			</div>
 

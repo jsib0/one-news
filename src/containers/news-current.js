@@ -43,7 +43,7 @@ class NewsCurrent extends Component {
 	}
 
 	currentNews(event) {
-		console.log("News Current",event)
+	
 	}
 
 

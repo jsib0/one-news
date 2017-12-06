@@ -28,7 +28,7 @@ class SideNavigation extends Component {
 			display: 'block'
 		}
 
-		return listNews.sources.map((news) => <a  style={listStyle}  onClick={ () => {this.fetchNewsCompany(news.id)}} href="#" >{news.name}</a>)
+		return listNews.sources.map((news) => <a  key={news.id} style={listStyle}  onClick={ () => {this.fetchNewsCompany(news.id)}} href="#" >{news.name}</a>)
 	}
 
 	
