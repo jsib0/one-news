@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {fetchNews } from '../actions/index.js';
+import {fetchNews } from '../actions/index';
 
 
 
@@ -10,8 +10,6 @@ class CallNews extends Component {
 		super(props);
 
 		this.state = { term: '' };
-
-		
 	}
 
 	componentDidMount() {

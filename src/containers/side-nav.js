@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SideNav, {MenuIcon} from 'react-simple-sidenav';
 import { fetchNews, fetchCompany } from '../actions/index';
+import { Link } from 'react-router-dom';
 
 
 class SideNavigation extends Component {
@@ -10,25 +11,22 @@ class SideNavigation extends Component {
 
 		this.state = { showNav: false, term: '' };
 
-		this.fetchNewsCompany = this.fetchNewsCompany.bind(this);
-  
   		this.listNews = this.listNews.bind(this);
 	}
-
-	fetchNewsCompany(event) {
-		
-		this.props.fetchCompany(event);
-	}
-
 	
 	
 	listNews(listNews) {
-		
+
 		let listStyle = {
 			display: 'block'
 		}
 
-		return listNews.sources.map((news) => <a  key={news.id} style={listStyle}  onClick={ () => {this.fetchNewsCompany(news.id)}} href="#" >{news.name}</a>)
+		return ( listNews.sources.map((news) => 
+		
+			<Link key={news.id} onClick={ () => { window.location.reload()} } to={`/${news.id}`}>{news.name}</Link>
+		
+			)
+		)
 	}
 
 	

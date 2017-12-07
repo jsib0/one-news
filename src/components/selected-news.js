@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadInitPage } from '../actions/index';
-import { Col } from 'react-bootstrap';
+import { fetchSelectedNews } from '../actions';
+import _ from 'lodash';
 
-
-class InitPage extends Component {
+class SelectedNews extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { initNews: ''};
 	}
 
 	componentDidMount() {
-		this.props.loadInitPage()
+		const { id } = this.props.match.params;
+		this.props.fetchSelectedNews(id);
 	}
 
-	homePage(event){
-		
-		let main = event.articles[0];
-		let newslist = event.articles.map( (head) => 
+
+
+	selectedNews(event) {
+			let main = event.articles[0];
+			let newslist = event.articles.map( (head) => 
 				
 					<div key={head.url} className="newslist-title" >
 						<a href={head.url} target="_blank"><img src={head.urlToImage} alt=""/>
@@ -27,16 +27,14 @@ class InitPage extends Component {
 						</a>
 					</div>
 				)
-			
 
-		return (
+			return (
 			<div key={main.source.name} className="main-block">
 				<div className="news-name">Source: {main.source.name}</div>
 				<div className="main-story">
 					{newslist}
 				</div>
 				<div className="news-list">
-					
 				</div>
 			</div>
 
@@ -44,20 +42,22 @@ class InitPage extends Component {
 	   )
 	}
 
-
-	render () {
-		console.log("INIT-PAGE_COMP",this.props.homeNews)
+	render() {
+		console.log("SELECTED_NEWS_COMP",this.props.news)
 		return (
 			<div className="home-page">
-				{this.props.homeNews.map(this.homePage)}
+				{this.props.news.map(this.selectedNews)}
 			</div>
-	  )
+
+		)
 	}
 
+
 }
+
 
 function mapStateToProps(state) {
-	return { homeNews: state.homeNews };
+	return { news: state.selectedNews }
 }
 
-export default connect(mapStateToProps, { loadInitPage }) (InitPage);
+export default connect(mapStateToProps, { fetchSelectedNews }) (SelectedNews)

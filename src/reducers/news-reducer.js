@@ -1,6 +1,8 @@
-import { FETCH_NEWS, FETCH_COMPANY } from '../actions/index.js';
+import { FETCH_NEWS, FETCH_COMPANY, SELECTED_NEWS } from '../actions/index.js';
 
 export default function(state = [], action) {
+
+	console.log("CURRENT ACTION:", action)
 	switch (action.type) {
 		case FETCH_NEWS:
 			return [action.payload.data, ... state];
