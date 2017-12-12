@@ -13,17 +13,25 @@ class SideNavigation extends Component {
 
   		this.listNews = this.listNews.bind(this);
 	}
+
+	componentDidMount() {
+		this.props.fetchNews();
+	}
+
 	
 	
 	listNews(listNews) {
 
 		let listStyle = {
-			display: 'block'
+			display: 'block',
+			left: '0',
+			textDecoration: 'none'
+
 		}
 
 		return ( listNews.sources.map((news) => 
 		
-			<Link key={news.id} onClick={ () => { window.location.reload()} } to={`/${news.id}`}>{news.name}</Link>
+			<Link className="sidenav-list" key={news.id}  onClick={() => this.setState({showNav: false})} style={listStyle}to={`/${news.id}`}>{news.name}</Link>
 		
 			)
 		)
@@ -59,7 +67,7 @@ function mapStateToProps(state) {
 	return { news: state.news };
 }
 
-export default connect(mapStateToProps, { fetchCompany }) (SideNavigation);
+export default connect(mapStateToProps, { fetchCompany, fetchNews }) (SideNavigation);
 
 
 

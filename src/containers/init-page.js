@@ -31,7 +31,7 @@ class InitPage extends Component {
 
 		return (
 			<div key={main.source.name} className="main-block">
-				<div className="news-name">Source: {main.source.name}</div>
+				<div className="news-name">Top Headlines: {main.source.name}</div>
 				<div className="main-story">
 					{newslist}
 				</div>

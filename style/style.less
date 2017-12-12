@@ -93,12 +93,23 @@ a:hover .right:after {
          width: 100%;
          margin: 0 auto;
         }
-        div {
+        .newslist-title {
           width: 25%;
-          height: 300px;
+          height: 320px;
           float: left;
           margin: 10px;
+
         }
+        .newslist-description {
+         overflow: hidden;
+         text-overflow: ellipsis;
+         display: -webkit-box;
+         line-height: 16px;     
+         max-height: 80px;      
+         -webkit-line-clamp: 5; 
+         -webkit-box-orient: vertical;
+      }
+        
     }
 }
 
@@ -114,6 +125,13 @@ a:hover .right:after {
   a:nth-child(2):hover {
     text-decoration: none;
     p { color: @description-color }
+  }
+}
+
+.sidenav-list{
+  color: black;
+  &:hover {
+  color: blue
   }
 }
 
