@@ -26,13 +26,10 @@ class SideNavigation extends Component {
 			display: 'block',
 			left: '0',
 			textDecoration: 'none'
-
 		}
 
 		return ( listNews.sources.map((news) => 
-		
 			<Link className="sidenav-list" key={news.id}  onClick={() => this.setState({showNav: false})} style={listStyle}to={`/${news.id}`}>{news.name}</Link>
-		
 			)
 		)
 	}
@@ -50,9 +47,7 @@ class SideNavigation extends Component {
         	  	onHideNav = {() => this.setState({showNav: false})} 
 				items={[this.props.news.map(this.listNews)]}
 				title="ONE NEWS"
-			   
         	   />
-        	  <div></div>
     		</div>
 		)
 	}

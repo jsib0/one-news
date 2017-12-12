@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadInitPage } from '../actions/index';
 import { Col } from 'react-bootstrap';
+import TopTrend from '../components/top-trend';
 
 
 class InitPage extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { initNews: ''};
 	}
 
 	componentDidMount() {
-		this.props.loadInitPage()
+		this.props.loadInitPage();
 	}
 
 	homePage(event){
@@ -36,7 +36,7 @@ class InitPage extends Component {
 					{newslist}
 				</div>
 				<div className="news-list">
-					
+					<TopTrend />
 				</div>
 			</div>
 
@@ -46,7 +46,6 @@ class InitPage extends Component {
 
 
 	render () {
-		console.log("INIT-PAGE_COMP",this.props.homeNews)
 		return (
 			<div className="home-page">
 				{this.props.homeNews.map(this.homePage)}

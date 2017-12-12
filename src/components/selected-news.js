@@ -25,10 +25,6 @@ class SelectedNews extends Component {
 		if(nextProps.match.params.id !== this.props.match.params.id){
 			nextProps.fetchSelectedNews(id)
 		}	
-		
-
-
-
 	}
 
 
@@ -50,8 +46,6 @@ class SelectedNews extends Component {
 				<div className="main-story">
 					{newslist}
 				</div>
-				<div className="news-list">
-				</div>
 			</div>
 	   )
 	}
@@ -60,8 +54,6 @@ class SelectedNews extends Component {
 		return (
 			<div className="home-page">
 				{this.props.news.map(this.selectedNews)}
-
-
 			</div>
 
 	   )

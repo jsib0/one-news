@@ -4,11 +4,12 @@
 *{ box-sizing: border-box }
 
 
-/*** Navbar ***/
+/** nav button **/
 
-.ega-logo {
-	height: 45px;
-	margin: 0px;
+.button {
+  position: absolute;
+  top: 4em;
+  margin: 0;
 }
 
 .button {
@@ -55,15 +56,17 @@ a:hover .right:after {
   transform: rotate(45deg);
 }
 
+/** sidenav **/
 
-
-/** main page **/
-
-.button {
-  position: absolute;
-  top: 4em;
-  margin: 0;
+.sidenav-list{
+  color: black;
+  &:hover {
+  color: blue
+  }
 }
+
+
+/** main page - left **/
 
 .home-page {
   width: 90%;
@@ -71,6 +74,7 @@ a:hover .right:after {
   padding: 0;
   padding-top: 50px;
 }
+
 
 .main-block {
   display: grid;
@@ -117,23 +121,28 @@ a:hover .right:after {
   margin-left: 10px;
 }
 
-
+.news-list {
+  grid-area: news-list;
+}
 
 .main-story { 
-  
-
   a:nth-child(2):hover {
     text-decoration: none;
     p { color: @description-color }
   }
 }
 
-.sidenav-list{
-  color: black;
-  &:hover {
-  color: blue
-  }
+.top-trends-list {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;     
+  max-height: 48px;      
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  margin: 10px;
 }
+
 
 
 

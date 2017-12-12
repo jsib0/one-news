@@ -14,6 +14,7 @@ export const FETCH_COMPANY = 'FETCH_COMPANY';
 export const FETCH_NEWS = 'FETCH_NEWS';
 export const INIT_PAGE = 'INIT_PAGE';
 export const SELECTED_NEWS = 'SELECTED_NEWS';
+export const TOP_TRENDS = 'TOP_TRENDS'
 
 
 export function loadInitPage() {
@@ -38,11 +39,21 @@ export function fetchNews() {
 
 export function fetchSelectedNews(id) {
 	const request = axios.get(`${NEWSAPI_URL}?sources=${id}&apiKey=${API_KEY}`);
-	console.log("SELECTED_NEWS");
 	
 	return {
 		type: SELECTED_NEWS,
 		payload: request
 	}
 }
+
+export function fetchTopTrend() {
+	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000");
+	console.log("TOP TREND ACTION")
+	return {
+		type: TOP_TRENDS,
+		payload: request
+	}
+}
+
+
 

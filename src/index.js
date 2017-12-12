@@ -9,7 +9,7 @@ import SideNavigation from './containers/side-nav';
 import Favicon from 'react-favicon';
 import InitPage from './containers/init-page';
 import SelectedNews from './components/selected-news';
-
+import TopTrend from './components/top-trend'
 
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -25,13 +25,11 @@ class App extends Component {
  		return (
  		<BrowserRouter>	
  			<div>
- 			
  				<SideNavigation />
  				<Favicon url="http://localhost:8080/favicon.png?v=2" />
  				<Switch>
 					<Route path="/:id" component={SelectedNews} />
 					<Route path="/" component={InitPage} /> 
-
 				</Switch>
  			</div>
  		 </BrowserRouter> 
