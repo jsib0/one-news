@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSelectedNews } from '../actions';
 import Masonry from 'react-masonry-component';
+import TopTrend from '../components/top-trend';
+import PoliticsTrend from '../components/politics-trend';
+import { Link } from 'react-router-dom';
 
 class SelectedNews extends Component {
 	constructor(props) {
@@ -45,6 +48,16 @@ class SelectedNews extends Component {
 				<div className="news-name">Top Headlines: {main.source.name}</div>
 				<div className="main-story">
 					{newslist}
+				</div>
+				<div className="news-list">
+					<div className="news-list-navbar">
+						<Link to={'/politics'}><img src={require('../image/politics.png')} alt=""/></Link>
+						<Link to={'/toptrends'}><img src={require('../image/top-trends.png')} alt=""/></Link>
+						<img src="" alt=""/>
+						<img src="" alt=""/>
+					</div>
+					<TopTrend />
+					<PoliticsTrend />
 				</div>
 			</div>
 	   )

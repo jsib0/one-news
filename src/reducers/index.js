@@ -4,6 +4,7 @@ import SingleNews from './single-news-reducer';
 import InitNews from './init-page-reducer';
 import SelectedNews from './selected-news-reducer';
 import TopTrends from './top-trend-reducer'
+import PoliticsTrends from './politics-trend-reducer';
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
 	channel: SingleNews,
 	homeNews: InitNews,
 	selectedNews: SelectedNews,
-	topTrends: TopTrends
+	topTrends: TopTrends,
+	politicsTrends: PoliticsTrends
 });
 
 

@@ -32,11 +32,16 @@ class TopTrend extends Component {
 			return <div>Loading...</div>;
 		}
 
-		return (
+		if (topTrends.length >= 1 ) {
+			let newTrend = topTrends.slice(0,1);
+
+			return (
 			<div>
-				{this.props.topTrends.map(this.trends)}
+				{newTrend.map(this.trends)}
 			</div>
-		)
+		  )
+		}
+
 	}
 }
 

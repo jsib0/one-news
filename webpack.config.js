@@ -13,7 +13,10 @@ module.exports = {
       loader: 'babel-loader',
       query: {
         presets: ['react', 'es2015']
-      }
+      },
+    },
+    { test: /\.(png|jpg)$/, 
+      loader: 'url-loader?limit=8192' 
     }]
   },
   resolve: {

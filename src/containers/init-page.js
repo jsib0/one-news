@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import { loadInitPage } from '../actions/index';
 import { Col } from 'react-bootstrap';
 import TopTrend from '../components/top-trend';
+import PoliticsTrend from '../components/politics-trend';
+import { Link } from 'react-router-dom';
+
+
 
 
 class InitPage extends Component {
@@ -36,7 +40,14 @@ class InitPage extends Component {
 					{newslist}
 				</div>
 				<div className="news-list">
+					<div className="news-list-navbar">
+						<Link to={'/politics'}><img src={require('../image/politics.png')} alt=""/></Link>
+						<Link to={'/toptrends'}><img src={require('../image/top-trends.png')} alt=""/></Link>
+						<img src="" alt=""/>
+						<img src="" alt=""/>
+					</div>
 					<TopTrend />
+					<PoliticsTrend />
 				</div>
 			</div>
 
