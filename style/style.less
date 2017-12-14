@@ -123,12 +123,30 @@ a:hover .right:after {
 
 .news-list {
   grid-area: news-list;
-  outline: 1px solid red;
+
   .news-list-navbar {
-    height: 20px;
-    outline: 2px solid green;
+    padding: 0;
+    height: 25px;
+
+    div:nth-child(1){
+      height: 25px;
+      display: inline-block;
+      font-size: 1em;
+      padding-top: 5px;
+    }
+
+    div:nth-child(2) {
+      bottom: 5px;
+      display: inline-block;
+      position: relative;
+      padding-left: 40%;
+      height: 25px;
+    }
+
     img {
-    height: 15px;
+      height: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
     }
   }
 
@@ -142,6 +160,8 @@ a:hover .right:after {
 }
 
 .top-trends-list {
+  left: 0;
+
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -149,7 +169,12 @@ a:hover .right:after {
   max-height: 48px;      
   -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
-  margin: 10px;
+   margin: 10px;
+}
+
+.hellodolly{
+  outline: 1px solid green;
+  padding: 0;
 }
 
 

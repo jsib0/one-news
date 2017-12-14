@@ -2,14 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSelectedNews } from '../actions';
 import Masonry from 'react-masonry-component';
-import TopTrend from '../components/top-trend';
-import PoliticsTrend from '../components/politics-trend';
-import { Link } from 'react-router-dom';
+import TopTrend from './top-trend';
+import PoliticsTrend from './politics-trend';
+import TechTrend from './tech-trend';
+import SportsTrend from './sports-trend';
+
+
 
 class SelectedNews extends Component {
 	constructor(props) {
 		super(props);
 
+		 this.state = {
+		 	trending: true,
+      		politics: false,
+      		tech: false,
+      		sports: false
+    	 }
+   		
+   		this.selectedNews = this.selectedNews.bind(this);
 	}
 
 	componentDidMount(ids) {
@@ -29,6 +40,8 @@ class SelectedNews extends Component {
 			nextProps.fetchSelectedNews(id)
 		}	
 	}
+
+	
 
 
 	selectedNews(event) {
@@ -51,15 +64,23 @@ class SelectedNews extends Component {
 				</div>
 				<div className="news-list">
 					<div className="news-list-navbar">
-						<Link to={'/politics'}><img src={require('../image/politics.png')} alt=""/></Link>
-						<Link to={'/toptrends'}><img src={require('../image/top-trends.png')} alt=""/></Link>
-						<img src="" alt=""/>
-						<img src="" alt=""/>
+						<div className="trending"><p>Trending</p></div>
+						<div className="news-list-images">
+							<img  onClick={() => this.setState({ trending: true, politics: false, tech: false, sports: false}) }  src={require( '../image/top-trends.png' )} alt="top-trends"/>
+							<img  onClick={() => this.setState({ politics: true, trending: false, tech: false, sports: false }) } src={require( '../image/politics.png' )} alt="politics"/>
+							<img  onClick={() => this.setState({ tech: true, trending: false, politics: false, sports: false }) } src={require( '../image/tech.png' )} alt="tech"/>
+							<img  onClick={() => this.setState({ sports: true, trending: false, politics: false, tech: false }) } src={require( '../image/sports.png' )} alt="sports"/>
+						</div>
 					</div>
-					<TopTrend />
-					<PoliticsTrend />
+					<div>
+					  { this.state.trending ? <TopTrend /> : null }
+					  { this.state.politics ? <PoliticsTrend /> : null }
+					  { this.state.tech ? <TechTrend /> : null }
+					  { this.state.sports ? <SportsTrend /> : null }
+					</div>
 				</div>
-			</div>
+				
+				</div>
 	   )
 	}
 

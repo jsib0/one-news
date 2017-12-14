@@ -9,8 +9,6 @@ import SideNavigation from './containers/side-nav';
 import Favicon from 'react-favicon';
 import InitPage from './containers/init-page';
 import SelectedNews from './components/selected-news';
-import TopTrend from './components/top-trend';
-import PoliticsTrend from './components/politics-trend';
 
 
 
@@ -30,11 +28,8 @@ class App extends Component {
  				<SideNavigation />
  				<Favicon url="http://localhost:8080/favicon.png?v=2" />
  				<Switch>
- 					<Route path="/politics" component={TopTrend}/>
-					<Route path="/toptrends" component={PoliticsTrend}/>
 					<Route path="/:id" component={SelectedNews} /> 
-						<Route path="/" component={InitPage} > 
-					</Route>
+					<Route path="/" component={InitPage} /> 
 				</Switch>
  			</div>
  		 </BrowserRouter> 

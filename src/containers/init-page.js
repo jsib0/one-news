@@ -41,13 +41,11 @@ class InitPage extends Component {
 				</div>
 				<div className="news-list">
 					<div className="news-list-navbar">
-						<Link to={'/politics'}><img src={require('../image/politics.png')} alt=""/></Link>
-						<Link to={'/toptrends'}><img src={require('../image/top-trends.png')} alt=""/></Link>
+						<img src={require('../image/politics.png')} alt=""/>
+						<img src={require('../image/top-trends.png')} alt=""/>
 						<img src="" alt=""/>
 						<img src="" alt=""/>
 					</div>
-					<TopTrend />
-					<PoliticsTrend />
 				</div>
 			</div>
 

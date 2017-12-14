@@ -6,7 +6,7 @@ const SIDE_NAV_URL = `https://newsapi.org/v1/sources?language=en`
 const NEWSAPI_URL = `https://newsapi.org/v2/top-headlines`;
 const TOP_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000"
 const POLITICS_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C900%20site_category%3Apolitics"
-const TECH_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech"
+const TECHIE_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech"
 const SPORTS_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112673346&sort=relevancy&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Asports%20performance_score%3A%3E7"
 
 
@@ -14,8 +14,10 @@ export const FETCH_COMPANY = 'FETCH_COMPANY';
 export const FETCH_NEWS = 'FETCH_NEWS';
 export const INIT_PAGE = 'INIT_PAGE';
 export const SELECTED_NEWS = 'SELECTED_NEWS';
-export const TOP_TRENDS = 'TOP_TRENDS'
-export const POLITICS_TRENDS ='POLITICS_TRENDS'
+export const TOP_TRENDS = 'TOP_TRENDS';
+export const POLITICS_TRENDS ='POLITICS_TRENDS';
+export const TECH_TRENDS = 'TECH_TRENDS';
+export const SPORTS_TRENDS = 'SPORTS_TRENDS'
 
 
 export function loadInitPage() {
@@ -60,6 +62,25 @@ export function fetchPoliticsTrend() {
 	return {
 		type: POLITICS_TRENDS,
 		payload: request 
+	}
+}
+
+export function fetchTechTrend() {
+	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech")
+
+	return {
+		type: TECH_TRENDS,
+		payload: request
+	}
+
+}
+
+export function fetchSportsTrend() {
+	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112673346&sort=relevancy&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Asports%20performance_score%3A%3E7") 
+
+	return {
+		type: SPORTS_TRENDS,
+		payload: request
 	}
 }
 
