@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSelectedNews } from '../actions';
-import Masonry from 'react-masonry-component';
 import TopTrend from './top-trend';
 import PoliticsTrend from './politics-trend';
 import TechTrend from './tech-trend';
