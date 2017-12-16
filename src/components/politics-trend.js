@@ -30,7 +30,7 @@ class PoliticsTrend extends Component {
 		const { politicsTrends } = this.props
 
 		if (politicsTrends.length < 1) {
-			return <div>Loading...</div>;
+			return <div className="loading" >Loading...</div>;
 		}
 
 		if (politicsTrends.length >= 1 ) {

@@ -1,60 +1,85 @@
+
+
 @head-title-color: #6391bf;
 @description-color: #000;
+@hamburger-color: #e74c3c;
 
 *{ box-sizing: border-box }
 
 
-/** nav button **/
+/** hamburger menu **/
 
-.button {
-  position: absolute;
-  top: 4em;
-  margin: 0;
-}
+.con, .special-con {
+   cursor: pointer;
+   display: inline-block;
+ }
 
-.button {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  margin: 6em 0 0 0;
-  padding: 0;
-}
+.bar {
+   display: block;
+   height: 5px;
+   width: 50px;
+   background: @hamburger-color;
+   margin: 10px auto;
+ }
 
-.button > a {
-  display: inline-block;
-  border-radius: 50%;
-}
+.bar {
+   -webkit-transition: all .7s ease;
+   -moz-transition: all .7s ease;
+   -ms-transition: all .7s ease;
+   -o-transition: all .7s ease;
+   transition: all .7s ease;
+ }
 
-.button > a:hover .right{
-  border: 0.3em solid #2C7744;
-}
+.con {
+   width: 50px;
+   margin: 0 auto;
+   -webkit-transition: all .7s ease;
+   -moz-transition: all .7s ease;
+   -ms-transition: all .7s ease;
+   -o-transition: all .7s ease;
+   transition: all .7s ease;
+ }
+ 
+ .col {
+   display: inline-block;
+   width: 24%;
+   text-align: center;
+   height: auto;
+   position: relative;
+ }
+ 
+ .con:hover {
+   padding-left: 15px;
+ }
 
-a:hover .right:after {
-  border-top: 0.3em solid #2C7744;
-  border-right: 0.3em solid #2C7744;
-}
+ .con:hover .arrow-top {
+   -webkit-transform: rotateZ(45deg) translateY(11px);
+   -moz-transform: rotateZ(45deg) translateY(11px);
+   -ms-transform: rotateZ(45deg) translateY(11px);
+   -o-transform: rotateZ(45deg) translateY(11px);
+   transform: rotateZ(45deg) translateY(11px);
+   width: 25px;
+ }
+ 
+ .con:hover .arrow-middle {
+   -webkit-transform: translateX(-15px);
+   -moz-transform: translateX(-25px);
+   -ms-transform: translateX(-25px);
+   -o-transform: translateX(-25px);
+   transform: translateX(-20px);
+   width: 40px;
+  
+ }
+ 
+ .con:hover .arrow-bottom {
+   -webkit-transform: rotateZ(-45deg) translateY(-11px);
+   -moz-transform: rotateZ(-45deg) translateY(-11px);
+   -ms-transform: rotateZ(-45deg) translateY(-11px);
+   -o-transform: rotateZ(-45deg) translateY(-11px);
+   transform: rotateZ(-45deg) translateY(-11px);
+   width: 25px;
+ }
 
-.right {
-  display: inline-block;
-  width: 3em;
-  height: 3em;
-  border: 0.3em solid #e74c3c;
-  border-radius: 50%;
-}
-
-.right:after {
-  content: '';
-  display: inline-block;
-  margin-top: .7em;
-  margin-left: -0.5em;
-  width: 1em;
-  height: 1em;
-  border-top: 0.3em solid #e74c3c;
-  border-right: 0.3em solid #e74c3c;
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 
 /** sidenav **/
 
@@ -65,6 +90,36 @@ a:hover .right:after {
   }
 }
 
+//* logo *//
+
+.logo {
+    bottom: -25px;
+    position: absolute;
+    width: 200px;
+    margin: 0;
+    display: inline-block;
+    p::first-letter {
+      font-family: 'Limelight', cursive;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+    p {
+      font-family: 'Limelight', cursive;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      display: inline-block;
+      color: #000;
+    }
+    h4 {
+      font-family: 'Abhaya Libre', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: red;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+}
+
 
 /** main page - left **/
 
@@ -72,7 +127,6 @@ a:hover .right:after {
   width: 90%;
   margin: 0 auto;
   padding: 0;
-  padding-top: 50px;
 }
 
 
@@ -98,7 +152,7 @@ a:hover .right:after {
          margin: 0 auto;
         }
         .newslist-title {
-          width: 25%;
+          width: 30%;
           height: 320px;
           float: left;
           margin: 10px;
@@ -125,10 +179,13 @@ a:hover .right:after {
   grid-area: news-list;
 
   .news-list-navbar {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "trending news-list-images";
     padding: 0;
     height: 25px;
-
     div:nth-child(1){
+      grid-area: trending; 
       height: 25px;
       display: inline-block;
       font-size: 1em;
@@ -136,7 +193,7 @@ a:hover .right:after {
     }
 
     div:nth-child(2) {
-      bottom: 5px;
+      grid-area: news-list-images;
       display: inline-block;
       position: relative;
       padding-left: 40%;
@@ -172,8 +229,17 @@ a:hover .right:after {
    margin: 10px;
 }
 
-.hellodolly{
-  padding: 0;
+.trending {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 10rem;
+  font-weight: bold;
+  padding-left: 45px;
+
+}
+
+
+.loading {
+  padding-left: 45px;
 }
 
 

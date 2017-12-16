@@ -39,9 +39,13 @@ class SideNavigation extends Component {
 		
 		return (
 			<div>
-			  <div className="button"  onClick={() => this.setState({showNav: true})}>
-			  <a href="#"><span className="right"></span></a>
-   			  </div>
+   			  <div className="col" onClick={() => this.setState({showNav: true})}>
+   				 <div className="con">
+      			 	<div className="bar arrow-top"></div>
+      		     	<div className="bar arrow-middle"></div>
+      				<div className="bar arrow-bottom"></div>
+    		  	</div>
+  			  </div>
 			  <SideNav
          	  	showNav = {this.state.showNav}
         	  	onHideNav = {() => this.setState({showNav: false})} 

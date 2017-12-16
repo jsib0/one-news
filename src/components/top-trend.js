@@ -28,14 +28,14 @@ class TopTrend extends Component {
 		const { topTrends } = this.props
 
 		if (topTrends.length < 1) {
-			return <div>Loading Trending News...</div>;
+			return <div className="loading" >Loading Trending News...</div>;
 		}
 
 		if (topTrends.length >= 1) {
 			let newTrend = topTrends.slice(0,1);
 
 			return (
-			<div className="hellodolly">
+			<div>
 				{newTrend.map(this.trends)}
 			</div>
 		  )

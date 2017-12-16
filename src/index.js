@@ -5,10 +5,10 @@ import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import reducers from './reducers';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SideNavigation from './containers/side-nav';
 import Favicon from 'react-favicon';
 import InitPage from './containers/init-page';
 import SelectedNews from './components/selected-news';
+import NavBar from './components/navbar';
 
 
 
@@ -25,7 +25,6 @@ class App extends Component {
  		return (
  		<BrowserRouter>	
  			<div>
- 				<SideNavigation />
  				<Favicon url="http://localhost:8080/favicon.png?v=2" />
  				<Switch>
 					<Route path="/:id" component={SelectedNews} /> 

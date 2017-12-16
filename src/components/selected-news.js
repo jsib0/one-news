@@ -5,6 +5,9 @@ import TopTrend from './top-trend';
 import PoliticsTrend from './politics-trend';
 import TechTrend from './tech-trend';
 import SportsTrend from './sports-trend';
+import SideNavigation from '../containers/side-nav';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 
@@ -56,6 +59,17 @@ class SelectedNews extends Component {
 				)
 
 			return (
+				<div>
+			 <Navbar>
+				<Navbar.Header>
+			      <Navbar.Brand>
+			     	 <SideNavigation />
+				  </Navbar.Brand>
+				</Navbar.Header>
+				<Nav>
+					<NavItem><Link to={"/"} className="logo" >One News</Link></NavItem>
+				</Nav>
+			</Navbar>
 			<div key={main.source.name} className="main-block">
 				<div className="news-name">Top Headlines: {main.source.name}</div>
 				<div className="main-story">
@@ -79,6 +93,7 @@ class SelectedNews extends Component {
 					</div>
 				</div>
 				
+				</div>
 				</div>
 	   )
 	}
