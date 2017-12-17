@@ -59,19 +59,19 @@ class SelectedNews extends Component {
 				)
 
 			return (
-				<div>
-			 <Navbar>
+				<div className="main-container">
+			 <Navbar bsStyle="nav-bar">
 				<Navbar.Header>
 			      <Navbar.Brand>
 			     	 <SideNavigation />
 				  </Navbar.Brand>
 				</Navbar.Header>
 				<Nav>
-					<NavItem><Link to={"/"} className="logo" >One News</Link></NavItem>
+				<NavItem><Link to={"/"} className="logo" ><p>One</p><h4>News</h4></Link></NavItem>
 				</Nav>
 			</Navbar>
 			<div key={main.source.name} className="main-block">
-				<div className="news-name">Top Headlines: {main.source.name}</div>
+				<div className="news-name">{main.source.name}</div>
 				<div className="main-story">
 					{newslist}
 				</div>

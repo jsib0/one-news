@@ -36,6 +36,11 @@ class SideNavigation extends Component {
 
 	
 	render () {
+		let title = (
+			<div>
+				<a className="side-nav-logo"><p >One</p><h4>News</h4></a>
+			</div>
+		)
 		
 		return (
 			<div>
@@ -50,7 +55,7 @@ class SideNavigation extends Component {
          	  	showNav = {this.state.showNav}
         	  	onHideNav = {() => this.setState({showNav: false})} 
 				items={[this.props.news.map(this.listNews)]}
-				title="ONE NEWS"
+				title={title}
         	   />
     		</div>
 		)

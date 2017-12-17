@@ -10,15 +10,7 @@ class NavVar extends Component {
 	}
 
 	render() {
-		return (
-			<div className="search-bar">
-				<div className="button"  onClick={() => this.setState({showNav: true})}>
-			 	 <a href="#"><span className="right"></span></a>
-			 	</div>
-   		    </div>
-
-			
-		)
+		
 	}
 
 	

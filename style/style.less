@@ -7,6 +7,25 @@
 *{ box-sizing: border-box }
 
 
+/** navbar **/
+
+.navbar-nav-bar {
+  background-color: #EDE1D1;
+}
+
+.navbar-nav{
+  li {
+    a:hover {
+        background-color: transparent !important;
+    }
+  }
+}
+
+.main-man {
+  padding: 0;
+}
+
+
 /** hamburger menu **/
 
 .con, .special-con {
@@ -84,17 +103,47 @@
 /** sidenav **/
 
 .sidenav-list{
-  color: black;
+  color: #000;
   &:hover {
-  color: blue
+  color: #ff0000;
   }
 }
+
+
 
 //* logo *//
 
 .logo {
     bottom: -25px;
     position: absolute;
+    width: 200px;
+    margin: 0;
+    display: inline-block;
+    p::first-letter {
+      font-family: 'Limelight', cursive;
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+    p {
+      font-family: 'Limelight', cursive;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      display: inline-block;
+      color: #000;
+    }
+    h4 {
+      font-family: 'Abhaya Libre', serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: red;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+}
+
+
+.side-nav-logo {
+    bottom: -25px;
     width: 200px;
     margin: 0;
     display: inline-block;
@@ -172,7 +221,14 @@
 }
 
 .news-name {
+  grid-area: news-name;
+  justify-self: center;
   margin-left: 10px;
+  font-family: 'Abril Fatface';
+  font-weight: 800;
+  font-size: 2em;
+  border-bottom: 7px double red;
+  margin-bottom: 20px;
 }
 
 .news-list {
@@ -215,6 +271,7 @@
     p { color: @description-color }
   }
 }
+
 
 .top-trends-list {
   left: 0;

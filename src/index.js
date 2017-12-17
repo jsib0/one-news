@@ -24,7 +24,7 @@ class App extends Component {
  	render () {
  		return (
  		<BrowserRouter>	
- 			<div>
+ 			<div className="main-man">
  				<Favicon url="http://localhost:8080/favicon.png?v=2" />
  				<Switch>
 					<Route path="/:id" component={SelectedNews} /> 
