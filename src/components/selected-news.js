@@ -19,7 +19,12 @@ class SelectedNews extends Component {
 		 	trending: true,
       		politics: false,
       		tech: false,
-      		sports: false
+      		sports: false,
+      		images: [require('../image/top-trends.png'), require( '../image/top-trends-grey.png' ),require( '../image/politics.png' ), require( '../image/politics-grey.png'), require( '../image/tech.png' ), require( '../image/tech-grey.png'), require( '../image/sports.png'), require( '../image/sports-grey.png' )],
+      		tre_img: require('../image/top-trends.png'),
+      		pol_img: require('../image/politics-grey.png'),
+      		tech_img: require('../image/tech-grey.png' ),
+      		sports_img: require('../image/sports-grey.png')
     	 }
    		
    		this.selectedNews = this.selectedNews.bind(this);
@@ -57,7 +62,7 @@ class SelectedNews extends Component {
 						</a>
 					</div>
 				)
-
+			let image = this.state.images;
 			return (
 				<div className="main-container">
 			 <Navbar bsStyle="nav-bar">
@@ -79,10 +84,14 @@ class SelectedNews extends Component {
 					<div className="news-list-navbar">
 						<div className="trending"><p>Trending</p></div>
 						<div className="news-list-images">
-							<img  onClick={() => this.setState({ trending: true, politics: false, tech: false, sports: false}) }  src={require( '../image/top-trends.png' )} alt="top-trends"/>
-							<img  onClick={() => this.setState({ politics: true, trending: false, tech: false, sports: false }) } src={require( '../image/politics.png' )} alt="politics"/>
-							<img  onClick={() => this.setState({ tech: true, trending: false, politics: false, sports: false }) } src={require( '../image/tech.png' )} alt="tech"/>
-							<img  onClick={() => this.setState({ sports: true, trending: false, politics: false, tech: false }) } src={require( '../image/sports.png' )} alt="sports"/>
+							<a onClick={() => this.setState({ trending: 1, politics: 0, tech: 0, sports: 0,  tre_img: image[0], pol_img: image[3], tech_img: image[5], sports_img:  image[7] }) } ><img  src={this.state.tre_img} alt="top-trends"/>
+							<span className="hello">Trends</span></a>
+							<a onClick={() => this.setState({ politics: 1, trending: 0, tech: 0, sports: 0, pol_img: image[2], tre_img: image[1], tech_img: image[5], sports_img:  image[7] }) } ><img src={this.state.pol_img} alt="politics"/>
+							<span>Politics</span></a>
+							<a onClick={() => this.setState({ tech: 1, trending: 0, politics: 0, sports: 0, tech_img: image[4], pol_img: image[3], tre_img: image[1], sports_img:  image[7] }) }><img src={this.state.tech_img} alt="tech"/>
+							<span>Tech</span></a>
+							<a onClick={() => this.setState({ sports: 1, trending: 0, politics: 0, tech: 0, sports_img:  image[6],  pol_img: image[3], tech_img: image[5], tre_img: image[1] }) }><img src={this.state.sports_img} alt="sports"/>
+							<span>Sports</span></a>
 						</div>
 					</div>
 					<div>

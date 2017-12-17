@@ -30,7 +30,7 @@ class TechTrend extends Component {
 		const { techTrends } = this.props
 
 		if (techTrends.length < 1) {
-			return <div className="loading">Loading...</div>;
+			return <div className="loading">Fetching API...</div>;
 		}
 
 		if (techTrends.length >= 1) {
