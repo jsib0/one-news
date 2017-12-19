@@ -8,7 +8,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import InitPage from './containers/init-page';
 import SelectedNews from './components/selected-news';
-import NavBar from './components/navbar';
 
 
 

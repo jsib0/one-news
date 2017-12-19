@@ -10,17 +10,17 @@ class PoliticsTrend extends Component {
 	}
 
 	trends(event){
-			let newEvents = event.posts.slice(0,7);
-			let trend_results = newEvents.map( (results) => 
-				<li className="top-trends-list" >
-					<a href={results.url} target="_blank">{results.title}</a>
-				</li>
-			)
-
-		return (
-			<ul>
-			 	{trend_results}
-			</ul>
+		let newEvent = event.posts.slice(0,7);
+		
+		return  _.map( newEvent, (result) => {
+	
+			return (
+				<ul key={result.uuid} >
+					<li className="top-trends-list">
+						<a  href={result.url} target="_blank">{result.title}</a>
+					</li>
+				</ul>
+			)}
 		)
 	}
 
@@ -35,14 +35,13 @@ class PoliticsTrend extends Component {
 
 		if (politicsTrends.length >= 1 ) {
 			let newTrends = politicsTrends.slice(0,1)
-		return (
-			<div>
-				{newTrends.map(this.trends)}
-			</div>
-		)
-	  }
-	}
-	
+			return (
+				<div>
+					{newTrends.map(this.trends)}
+				</div>
+			)
+	  	}
+	}	
 }
 
 
@@ -53,7 +52,5 @@ class PoliticsTrend extends Component {
 function mapStateToProps(state){
 		return { politicsTrends: state.politicsTrends }
 }
-
-
 
 export default connect(mapStateToProps, { fetchPoliticsTrend }) (PoliticsTrend)

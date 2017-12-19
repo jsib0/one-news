@@ -10,19 +10,19 @@ class SportsTrend extends Component {
 	}
 
 
-		trends(event) {
+	trends(event) {
 		let newEvent = event.posts.slice(0,7);
-		let trendz_results = newEvent.map( (result) => 
-			<li className="top-trends-list">
-			<a  href={result.url} target="_blank">{result.title}</a>
-			</li>
-		 ) 
-		
-		 return (
-			<ul>
-				{trendz_results}
-			</ul>
-		 ) 
+
+		return  _.map( newEvent, (result) => {
+	
+			return (
+				<ul key={result.uuid} >
+					<li className="top-trends-list">
+						<a  href={result.url} target="_blank">{result.title}</a>
+					</li>
+				</ul>
+			)}
+		)
 	}
 
 
@@ -49,6 +49,5 @@ class SportsTrend extends Component {
 function mapStateToProps(state) {
 	return { sportsTrends: state.sportsTrends }
 }
-
 
 export default connect(mapStateToProps, { fetchSportsTrend })(SportsTrend)

@@ -1,15 +1,18 @@
 import axios from 'axios';
 
 
+
+
+/* old key. keep for portfolio purposes */
+// const TOP_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000"
+// const POLITICS_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C900%20site_category%3Apolitics"
+// const TECHIE_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech"
+// const SPORTS_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112673346&sort=relevancy&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Asports%20performance_score%3A%3E7"
+
+
 const API_KEY = 'c28d0feed4f94706b18771da0a1cf8db';
 const SIDE_NAV_URL = `https://newsapi.org/v1/sources?language=en`
 const NEWSAPI_URL = `https://newsapi.org/v2/top-headlines`;
-const TOP_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000"
-const POLITICS_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C900%20site_category%3Apolitics"
-const TECHIE_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech"
-const SPORTS_TREND = "http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112673346&sort=relevancy&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Asports%20performance_score%3A%3E7"
-
-
 export const FETCH_COMPANY = 'FETCH_COMPANY';
 export const FETCH_NEWS = 'FETCH_NEWS';
 export const INIT_PAGE = 'INIT_PAGE';
@@ -51,6 +54,7 @@ export function fetchSelectedNews(id) {
 
 export function fetchTopTrend() {
 	const request = axios.get("http://webhose.io/filterWebContent?token=053e3193-7dd5-4869-a07c-d287c1ebc2c6&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000");
+	
 	return {
 		type: TOP_TRENDS,
 		payload: request

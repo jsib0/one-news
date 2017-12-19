@@ -34,20 +34,19 @@ class SideNavigation extends Component {
 		)
 	}
 
-	
 	render () {
 		let title = (
 			<div>
-				<a className="side-nav-logo"><p >One</p><h4>News</h4></a>
+				<a className="side-nav-logo"><p>One</p><h4>News</h4></a>
 			</div>
 		)
 		
 		return (
 			<div>
    			  <div className="col" onClick={() => this.setState({showNav: true})}>
-   				 <div className="con">
-      			 	<div className="bar arrow-top"></div>
-      		     	<div className="bar arrow-middle"></div>
+   				<div className="con">
+      			    <div className="bar arrow-top"></div>
+      		        <div className="bar arrow-middle"></div>
       				<div className="bar arrow-bottom"></div>
     		  	</div>
   			  </div>
@@ -60,8 +59,6 @@ class SideNavigation extends Component {
     		</div>
 		)
 	}
-
-
 }
 
 

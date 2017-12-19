@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopTrend } from '../actions';
+import _ from 'lodash';
 
 class TopTrend extends Component {
 
@@ -10,17 +11,17 @@ class TopTrend extends Component {
 
 	trends(event) {
 		let newEvent = event.posts.slice(0,7);
-		let trendz_results = newEvent.map( (result) => 
-			<li className="top-trends-list">
-			<a  href={result.url} target="_blank">{result.title}</a>
-			</li>
-		 ) 
+	
+		return  _.map( newEvent, (result) => {
 		
-		 return (
-			<ul>
-				{trendz_results}
-			</ul>
-		 ) 
+			return (
+				<ul key={result.uuid} >
+					<li className="top-trends-list">
+						<a  href={result.url} target="_blank">{result.title}</a>
+					</li>
+				</ul>
+			)}
+		)
 	}
 
 
@@ -35,14 +36,12 @@ class TopTrend extends Component {
 			let newTrend = topTrends.slice(0,1);
 
 			return (
-			<div>
-				{newTrend.map(this.trends)}
-			</div>
-		  )
+				<div>
+					{newTrend.map(this.trends)}
+				</div>
+		  	)
 		}
 	}
-
-	
 }
 
 
