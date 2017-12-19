@@ -56,9 +56,10 @@ class SelectedNews extends Component {
 			let main = event.articles[0];
 			let newslist = event.articles.map( (head) => 
 					<div key={head.url} className="newslist-title" >
-						<a href={head.url} target="_blank"><img src={head.urlToImage} alt=""/>
-						<h4>{head.title}</h4>
-							<p className="newslist-description">{head.description}</p>
+						<a href={head.url} target="_blank">
+						<div className="newslist-image" ><img src={head.urlToImage} alt=""/></div>
+						<div className="newslist-header"><h4>{head.title}</h4></div>
+						<div className="newslist-p-tag"><p  >{head.description}</p></div>
 						</a>
 					</div>
 				)
@@ -72,7 +73,7 @@ class SelectedNews extends Component {
 				  </Navbar.Brand>
 				</Navbar.Header>
 				<Nav>
-				<NavItem><Link to={"/"} className="logo" ><p>One</p><h4>News</h4></Link></NavItem>
+				<NavItem className="hello"><Link to={"/"} className="logo" ><p>One</p><h4>News</h4></Link></NavItem>
 				</Nav>
 			</Navbar>
 			<div key={main.source.name} className="main-block">

@@ -43,9 +43,10 @@ class InitPage extends Component {
 		let newslist = event.articles.map( (head) => 
 				
 					<div key={head.url} className="newslist-title" >
-						<a href={head.url} target="_blank"><img src={head.urlToImage} alt=""/>
-						<h4>{head.title}</h4>
-						<p>{head.description}</p>
+						<a href={head.url} target="_blank">
+						<div className="newslist-image" ><img src={head.urlToImage} alt=""/></div>
+						<div className="newslist-header"><h4>{head.title}</h4></div>
+						<div className="newslist-p-tag"><p  >{head.description}</p></div>
 						</a>
 					</div>
 				)

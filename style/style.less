@@ -6,6 +6,10 @@
 
 *{ box-sizing: border-box }
 
+.container {
+  min-width:1168px;
+}
+
 
 /** navbar **/
 
@@ -86,7 +90,7 @@
    -ms-transform: translateX(-25px);
    -o-transform: translateX(-25px);
    transform: translateX(-20px);
-   width: 40px;
+   width: 35px;
   
  }
  
@@ -116,7 +120,7 @@
 .logo {
     bottom: -25px;
     position: absolute;
-    width: 200px;
+    width: 130px;
     margin: 0;
     display: inline-block;
     p::first-letter {
@@ -170,6 +174,7 @@
 }
 
 
+
 /** main page - left **/
 
 .home-page {
@@ -207,16 +212,6 @@
           margin: 10px;
 
         }
-        .newslist-description {
-         overflow: hidden;
-         text-overflow: ellipsis;
-         display: -webkit-box;
-         line-height: 16px;     
-         max-height: 80px;      
-         -webkit-line-clamp: 5; 
-         -webkit-box-orient: vertical;
-      }
-        
     }
 }
 
@@ -233,7 +228,6 @@
 
 .news-list {
   grid-area: news-list;
-
   .news-list-navbar {
     display: grid;
     grid-template-columns: 30% 70%;
@@ -456,21 +450,208 @@
 }
 
 .trending {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  font-size: 10rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
   font-weight: bold;
-  padding-left: 45px;
+  padding-left: 48px;
 
 }
 
 
 .loading {
-  padding-left: 45px;
+  padding-left: 48px;
 }
 
 
+/** media querries **/
+
+  /* tablets */
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .container {
+    min-width: 768px;
+   }
+
+  .main-block {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-areas: 
+    "news-name ."
+    "main-story news-list";
+    position: relative;
+
+   
+
+    .main-story {
+      grid-area: main-story;
+      margin: 0;
+
+        .newslist-title {
+          width: 100%;
+          position: relative;
+          height: 100%;
+          margin: 5px 0px;
+
+          a {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 20% auto;
+            grid-template-areas: 
+            "newslist-image newslist-header"
+            "newslist-image newslist-p-tag";
+            grid-column-gap: 10px;
+            align-items: start;
+            float: none;
+
+            .newslist-image {
+              grid-area: newslist-image ;
+              align-self: center;
+            }
+
+            .newslist-header {
+              grid-area: newslist-header;
+              align-self: start;
+            }  
+
+           .newslist-p-tag {
+              grid-area: newslist-p-tag;
+              line-height: 15px;
+              align-self: start;
+            }
+          }
+      }
+    }
+
+    .news-list-images {
+
+      img {
+        margin-top: 5px;
+        width: 20px;
+        height: 13px;
+      }
+    }
+
+}
+            
+          
+
+}
+
+
+    /* iPhones */
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 767px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .container {
+    min-width:720px;
+   
+    overflow: hidden;
+  }
+
+  .news-list {
+    visibility: hidden;
+  }
+
+  .col {
+   width: 10%;
+  }
+
+  .logo {
+    right: 0px;
+  }
+ 
+  
+  ul.nav {
+    bottom: 58px;
+    position: relative;
+    width: 130px;
+    height: 100px;
+    left: 75px;
+  }
+
+  .navbar {
+    .container {
+      height: 60px;
+    }
+  }
+  
+  .main-block {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "news-name"
+    "main-story";
+    position: relative;
+
+    .main-story {
+      grid-area: main-story;
+      margin: 0;
+
+        .newslist-title {
+          width: 100%;
+          position: relative;
+          height: 100%;
+          margin: 5px 0px;
+
+
+          a {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 20% auto;
+            grid-template-areas: 
+            "newslist-image newslist-header"
+            "newslist-image newslist-p-tag";
+            grid-column-gap: 5px;
+            
+            float: none;
+       
+            .newslist-image {
+              grid-area: newslist-image ;
+              align-self: center;
+
+              
+            }
+
+            .newslist-header {
+              grid-area: newslist-header;
+
+              h4 {
+                position: relative;
+                font-size: 1.5rem;
+              }
+            }  
+
+           .newslist-p-tag {
+              grid-area: newslist-p-tag;
+              line-height: 12px;
+             
+              p {
+                position: relative;
+                font-size: 1.2rem;
+                bottom: 5px;
+                left: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                line-height: 16px;     
+                max-height: 32px;      
+                -webkit-line-clamp: 2; 
+                -webkit-box-orient: vertical;
+              }
+            }
+          }
+        }
+    }
+  }
 
 
 
-
+}
 
