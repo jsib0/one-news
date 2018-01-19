@@ -7,7 +7,7 @@
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack -p",
-    "start": "node server.js"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
 
   },
   "author": "Jon P. Sibala",
@@ -30,7 +30,9 @@
     "react-router-dom": "^4.2.2",
     "react-simple-sidenav": "^0.1.6",
     "redux": "^3.7.2",
-    "redux-promise": "^0.5.3"
+    "redux-promise": "^0.5.3",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
