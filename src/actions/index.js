@@ -47,7 +47,7 @@ export function fetchSelectedNews(id) {
 }
 
 export function fetchTopTrend() {
-	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000");
+	const request = axios.get("https://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000");
 	
 	return {
 		type: TOP_TRENDS,
@@ -56,7 +56,7 @@ export function fetchTopTrend() {
 }
 
 export function fetchPoliticsTrend() {
-	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C900%20site_category%3Apolitics")
+	const request = axios.get("https://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C900%20site_category%3Apolitics")
 	return {
 		type: POLITICS_TRENDS,
 		payload: request 
@@ -64,7 +64,7 @@ export function fetchPoliticsTrend() {
 }
 
 export function fetchTechTrend() {
-	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6ba&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech")
+	const request = axios.get("https://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6ba&format=json&ts=1512112164892&sort=social.linkedin.shares&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Atech%20thread.section_title%3Atech")
 
 	return {
 		type: TECH_TRENDS,
@@ -74,7 +74,7 @@ export function fetchTechTrend() {
 }
 
 export function fetchSportsTrend() {
-	const request = axios.get("http://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112673346&sort=relevancy&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Asports%20performance_score%3A%3E7") 
+	const request = axios.get("https://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&ts=1512112673346&sort=relevancy&q=language%3Aenglish%20thread.country%3AUS%20site_category%3Asports%20performance_score%3A%3E7") 
 
 	return {
 		type: SPORTS_TRENDS,
