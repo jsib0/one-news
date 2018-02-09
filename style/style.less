@@ -8,7 +8,6 @@
   min-width:1168px;
 }
 
-
 /** navbar **/
 
 .navbar-nav-bar {
@@ -111,28 +110,29 @@
 }
 
 
-
 /** logo **/
 
-.logo {
-    bottom: -25px;
-    position: absolute;
-    width: 130px;
-    margin: 0;
-    display: inline-block;
+.navbar-nav {
+  position: absolute;
+  left: 10%;
+  bottom: 3px;
+}
 
+
+.logo {
+    margin: 0;
+    line-height: 1px; 
     p::first-letter {
       font-family: 'Limelight', cursive;
       font-size: 3rem;
       text-transform: uppercase;
     }
-
     p {
       font-family: 'Limelight', cursive;
       font-size: 1.75rem;
       text-transform: uppercase;
-      display: inline-block;
       color: #000;
+       display: inline-block;
     }
 
     h4 {
@@ -481,6 +481,11 @@
     min-width: 768px;
    }
 
+  .navbar-nav {
+    margin-left: 5%;
+    bottom: 1px;
+  }
+
   .main-block {
     display: grid;
     grid-template-columns: 65% 35%;
@@ -488,7 +493,6 @@
     "news-name ."
     "main-story news-list";
     position: relative;
-
     .main-story {
       grid-area: main-story;
       margin: 0;
@@ -518,19 +522,26 @@
             .newslist-header {
               grid-area: newslist-header;
               align-self: start;
-            }  
+              padding-top: 25px;
+              h4 {
+                position: relative;
+                font-size: 1rem;
+              }
+            }
 
            .newslist-p-tag {
               grid-area: newslist-p-tag;
               line-height: 15px;
               align-self: start;
             }
+            p {
+                font-size: .8rem; 
+              }
           }
     }
   }
 
     .news-list-images {
-
       img {
         margin-top: 5px;
         width: 20px;
@@ -553,6 +564,24 @@
     overflow: hidden;
   }
 
+  .navbar-nav {
+    margin-left: 25%;
+    bottom: 5px;
+  }
+ 
+  .logo {
+    p::first-letter {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.25rem; 
+    }
+
+    h4 {
+      font-size: 2rem;
+    }
+  }
+
   .news-list {
     visibility: hidden;
   }
@@ -561,25 +590,22 @@
    width: 10%;
   }
 
-  .logo {
-    right: 0px;
-  }
+  .side-nav-logo {
+    p::first-letter {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.25rem; 
+    }
 
-  ul.nav {
-    bottom: 58px;
-    position: relative;
-    width: 130px;
-    height: 100px;
-    left: 75px;
-  }
-
-  .navbar {
-
-    .container {
-      height: 60px;
+    h4 {
+      font-size: 2rem;
     }
   }
-  
+  .sidenav-list {
+    font-size: .75rem;
+  }
+
   .main-block {
     display: grid;
     grid-template-columns: 100%;
@@ -615,10 +641,11 @@
 
             .newslist-header {
               grid-area: newslist-header;
+              padding-top: 20px;
 
               h4 {
                 position: relative;
-                font-size: 1.5rem;
+                font-size: .7rem;
               }
             }  
 
@@ -628,7 +655,7 @@
              
               p {
                 position: relative;
-                font-size: 1.2rem;
+                font-size: .5rem;
                 bottom: 5px;
                 left: 0;
                 overflow: hidden;

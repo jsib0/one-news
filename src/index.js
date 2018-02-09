@@ -35,8 +35,6 @@ class App extends Component {
    };
 }
 
-
-
 ReactDOM.render(
 <Provider store={createStoreWithMiddleware(reducers)}>
 	<App />
