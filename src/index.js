@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Favicon from 'react-favicon';
 import InitPage from './containers/init-page';
 import SelectedNews from './components/selected-news';
-
+import thunk from 'redux-thunk';
 
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -35,8 +35,10 @@ class App extends Component {
    };
 }
 
+const store = createStoreWithMiddleware(reducers, applyMiddleware(thunk));
+
 ReactDOM.render(
-<Provider store={createStoreWithMiddleware(reducers)}>
+<Provider store={store}>
 	<App />
 </Provider>, 
 document.querySelector('.container'));
