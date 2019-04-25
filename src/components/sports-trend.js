@@ -30,7 +30,7 @@ class SportsTrend extends Component {
 		const { sportsTrends } = this.props
 
 		if (sportsTrends.length < 1) {
-			return <div className="loading">Fetching API...</div>;
+			return <div className="loading">Loading...</div>;
 		}
 
 		if (sportsTrends.length >= 1) {

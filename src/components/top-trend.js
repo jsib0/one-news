@@ -29,7 +29,7 @@ class TopTrend extends Component {
 		const { topTrends } = this.props
 
 		if (topTrends.length < 1) {
-			return <div className="loading" >Fetching API...</div>;
+			return <div className="loading" > Loading...</div>;
 		}
 
 		if (topTrends.length >= 1) {
