@@ -9,6 +9,9 @@
     "postinstall": "webpack -p",
     "start": "node server.js"
   },
+  "engines": {
+   "node": "11.8.0"
+ },
   "author": "Jon P. Sibala",
   "license": "ISC",
   "dependencies": {
