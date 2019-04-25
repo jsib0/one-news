@@ -10,7 +10,8 @@
     "start": "node server.js"
   },
   "engines": {
-   "node": "11.8.0"
+   "node": "11.8.0",
+   "npm": "6.5.0"
  },
   "author": "Jon P. Sibala",
   "license": "ISC",
