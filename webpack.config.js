@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './src/index.js' 
+    './src/index.js'
   ],
   output: {
     path: __dirname,
@@ -15,8 +15,8 @@ module.exports = {
         presets: ['react', 'es2015']
       },
     },
-    { test: /\.(png|jpg)$/, 
-      loader: 'url-loader?limit=8192' 
+    { test: /\.(png|jpg)$/,
+      loader: 'url-loader?limit=8192'
     }]
   },
   resolve: {
