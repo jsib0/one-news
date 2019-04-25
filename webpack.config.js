@@ -1,3 +1,4 @@
+var path = require('path');
 module.exports = {
   entry: [
     './src/index.js'
@@ -18,6 +19,9 @@ module.exports = {
     { test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
     }]
+  },
+  resolve: {
+      modules: [ path.join(__dirname, "src"),   "node_modules"]
   },
   resolve: {
     extensions: [ '.js', '.jsx']
