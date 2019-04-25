@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SideNav, {MenuIcon} from 'react-simple-sidenav';
-import { fetchNews, fetchCompany } from '../actions/index';
+import { fetchNews } from '../actions/index';
 import { Link } from 'react-router-dom';
 
 
@@ -18,8 +18,8 @@ class SideNavigation extends Component {
 		this.props.fetchNews();
 	}
 
-	
-	
+
+
 	listNews(listNews) {
 
 		let listStyle = {
@@ -28,7 +28,7 @@ class SideNavigation extends Component {
 			textDecoration: 'none'
 		}
 
-		return ( listNews.sources.map((news) => 
+		return ( listNews.sources.map((news) =>
 			<Link className="sidenav-list" key={news.id}  onClick={() => this.setState({showNav: false})} style={listStyle} to={`/${news.id}`}>{news.name}</Link>
 		  )
 		)
@@ -40,7 +40,7 @@ class SideNavigation extends Component {
 				<a className="side-nav-logo"><p>One</p><h4>News</h4></a>
 			</div>
 		)
-		
+
 		return (
 			<div>
    			  <div className="col" onClick={() => this.setState({showNav: true})}>
@@ -52,7 +52,7 @@ class SideNavigation extends Component {
   			  </div>
 			  <SideNav
          	  	showNav = {this.state.showNav}
-        	  	onHideNav = {() => this.setState({showNav: false})} 
+        	  	onHideNav = {() => this.setState({showNav: false})}
 				items={[this.props.news.map(this.listNews)]}
 				title={title}
         	   />
@@ -68,7 +68,4 @@ function mapStateToProps(state) {
 	return { news: state.news };
 }
 
-export default connect(mapStateToProps, { fetchCompany, fetchNews }) (SideNavigation);
-
-
-
+export default connect(mapStateToProps, { fetchNews }) (SideNavigation);

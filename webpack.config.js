@@ -8,13 +8,19 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  resolve: {
+ modules: [
+   path.join(__dirname, "src"),
+   "node_modules"
+ ]
+},
   module: {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
       query: {
-        presets: ['react', 'es2015']
+        presets: ['@babel/preset-react', "@babel/preset-env"]
       },
     },
     { test: /\.(png|jpg)$/,

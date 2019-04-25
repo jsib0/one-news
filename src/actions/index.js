@@ -46,11 +46,11 @@ export function fetchSelectedNews(id) {
 	}
 }
 
-export const fetchTopTrend = () => async dispatch => {
+export function fetchTopTrend() {
 
-	const response = await axios.get("https://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000");
+	const response =  axios.get("https://webhose.io/filterWebContent?token=58115c54-6160-454f-9b57-6bf9a4394e6b&format=json&sort=social.facebook.likes&q=language%3Aenglish%20thread.country%3AUS%20performance_score%3A%3E9%20domain_rank%3A%3C1000");
+	return{ type: TOP_TRENDS, payload: response }
 
-	dispatch ({type: TOP_TRENDS, payload: response })
 }
 
 export function fetchPoliticsTrend() {
