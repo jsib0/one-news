@@ -1,7 +1,7 @@
-const express = require('express');
-const path = require('path');
-const port = process.env.PORT || 8080;
-const app = express();
+var express = require('express');
+var path = require('path');
+var port = process.env.PORT || 8080;
+var app = express();
 
 app.use(express.static(__dirname));
 
@@ -11,4 +11,3 @@ app.get('*', (req, res) => {
 
 app.listen(port);
 console.log('Server started:', port);
-
