@@ -9,14 +9,10 @@
     "postinstall": "webpack -p",
     "start": "node server.js",
     "build": "webpack"
-<<<<<<< HEAD
-
-=======
   },
   "engines": {
     "node": "11.8.0",
     "npm": "6.5.0"
->>>>>>> 1fc879b8aa8ed0903ec303c742057dd60af7ead1
   },
   "author": "Jon P. Sibala",
   "license": "ISC",
